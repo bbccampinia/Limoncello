@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <script src="form.js"></script>
+<!--        <script src="https://smtpjs.com/v3/smtp.js"></script>-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="form.css">
+        <link rel="icon" href="images/logo.png" type='image/x-icon' />
+        <title>BBC Campinia - Limoncello</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="bg">
+            <a href="index.html"><img class="logo" src="images/logo.png"></a>
+            <div class="form">
+                <form id="regForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeNjYK173pPQNPtLWCdBb6uWEAEYqPSlwYfy38ZqAbFkEDgWQ/formResponse">
+                    
+
+                    <div class="tab" id="tab0">
+                        <h1>Bestelformulier</h1>
+                        <div class="field">
+                            <p>Limoncello 0.5 l</p>
+                            <select id="limoncelloList" name="entry.1596117370">
+                                <option value="0">Kies aantal</option>
+                                <option value="1">1 fles (€10)</option>
+                                <option value="2">2 flessen (€20)</option>
+                                <option value="3">3 flessen (€30)</option>
+                                <option value="4">4 flessen (€40)</option>
+                                <option value="5">5 flessen (€50)</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <p>Limonade 0.75 l</p>
+                            <select id="limonadeList"  name="entry.810267697">
+                                <option value="0">Kies aantal</option>
+                                <option value="1">1 fles (€3)</option>
+                                <option value="2">2 flessen (€6)</option>
+                                <option value="3">3 flessen (€9)</option>
+                                <option value="4">4 flessen (€12)</option>
+                                <option value="5">5 flessen (€15)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tab" id="tab1">
+                        <h1>Gegevens</h1>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p>Voornaam*</p>
+                                    <input required type="text" placeholder="Voornaam" name="entry.2111466448">
+                                </td>
+                                <td>
+                                    <p>Achternaam*</p>
+                                    <input required type="text" placeholder="Achternaam" name="entry.501239135">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Emailadres*</p>
+                                    <input required id="email" type="email" placeholder="Email" name="entry.1789031087">
+                                </td> 
+                                <td>
+                                    <p>Telefoonnummer*</p>
+                                    <input required type="text" placeholder="Telefoonnummer" name="entry.288351835">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Bezorgwijze</p>
+                                    <input type="radio" id="levering" name="entry.1667882230" value="LeveringAanHuis">
+                                    <label for="LeveringAanHuis">Levering aan huis (mogelijk in Retie, Dessel en Mol)</label><br>
+                                    <input type="radio" id="afhalen" name="entry.1667882230" value="AfhalingInDessel">
+                                    <label for="AfhalingInDessel">Afhaling in Dessel</label><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab" id="tab2">
+                        <h1>Gegevens vervolg</h1>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p>Straat + huisnummer</p>
+                                    <input type="text" placeholder="Straat + huisnummer" name="entry.1503207315">
+                                </td>
+                                <td>
+                                    <p>Plaats</p>
+                                    <input type="text" placeholder="Plaats" name="entry.1752796779">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Indien niet thuis</p>
+                                    <input type="radio" id="buren" name="entry.1629819793" value="LeverBijDeBuren">
+                                    <label for="LeverBijDeBuren">Lever bij de buren</label><br>
+                                    <input type="radio" id="achterdeur" name="entry.1629819793" value="ZetAanAchterdeur">
+                                    <label for="ZetAanAchterdeur">Zet aan de achterdeur</label><br>
+                                    <input type="radio" id="ander" name="entry.1629819793" value="AnderMomentOfAfhaling">
+                                    <label for="AnderMomentOfAfhaling">Lever op ander moment of contacteer voor afhaling in Dessel</label><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab" id="tab3">
+
+                    </div>
+
+                    <div class="tab" id="tab4">
+                        <br><p>Bedankt voor je bestelling!</p><br><br>
+                    </div>
+
+                    <div id="buttons">
+                        <div class="button" id="vorige"><a onclick="previousTab()">Vorige</a></div>
+                        <div class="button" id="volgende"><a onclick="nextTab()">Volgende</a></div>
+<!--                        <div class="button" id="verzenden"><a onclick="submit()" class="form__submit">Verzenden</a></div>-->
+                        <button class="form__submit">Verzenden</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

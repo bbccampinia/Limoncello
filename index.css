@@ -1,0 +1,72 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg {
+    background-image: url("images/limoncello2.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#kader {
+    background-color: red;
+    background: rgba(255, 255, 255, 0.4);
+    width: 140vh;
+    height: 80vh;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5vh;
+}
+
+.logo {
+    padding-top: 6vh;
+    margin-top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25vh;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 6vh;
+    color: #550A21;
+    width: 140vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    text-align: center;
+    color: #550A21;
+    font-size: 3.5vh;
+    width: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+button {
+    width: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8vh;
+    display: block;
+    border-radius: 25px;
+    border: none;
+    background-color: #878E00;
+    line-height: 5vh;
+    font-size: 3vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
