@@ -168,7 +168,7 @@ function sendEmail() {
         Password: "CampiniLimon8",
         To: email,
         From: "limoncellocampinia@gmail.com",
-        Subject: "Bevestiging bestelling limoncello",
+        Subject: "Bevestiging bestelling limoncello & limonade",
         Body: "Bedankt voor je bestelling!\n\
 \n\
             Het te betalen bedrag (€" + totaal + ") kan gestort worden op BE80 0689 0960 3177 op naam van VZW BBC Campinia met als mededeling 'Limoncello " + naam + "', BIC: GKCCBEBB."
