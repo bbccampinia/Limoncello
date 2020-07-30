@@ -4,6 +4,7 @@ var limonade = 0;
 var totaal = 0;
 var email;
 var naam;
+var calculated = false;
 
 
 function showTab() {
@@ -74,6 +75,8 @@ function submit() {
 
 
 function calculate() {
+    calculated = true;
+
     if (document.getElementById("limoncelloList").value === "5") {
         limoncello = 50;
     } else if (document.getElementById("limoncelloList").value === "4") {
@@ -131,8 +134,6 @@ function calculate() {
 
 
 function nextTab() {
-
-
     if (document.getElementById("afhalen").checked === true) {
         currentTab = 10;
     } else if (currentTab === 2) {
@@ -146,6 +147,10 @@ function nextTab() {
 
 
 function previousTab() {
+    
+    if (calculated) {
+        document.getElementById('tab3').innerHTML = '';
+    }
 
     if (currentTab === 10) {
         currentTab = 1;
