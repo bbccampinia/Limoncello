@@ -68,6 +68,36 @@ h1 {
 
 #verzenden {
     display: none;
+    border: none;
+    color: white;
+    background-color: #878E00;
+    border-radius: 25px;
+    display: inline-block;
+    float: left;
+    margin-left: 2vh;
+    width: 15vh;
+}
+
+#verzendenButton::hover {
+    cursor: pointer; 
+}
+
+#verzenden::hover {
+    cursor: pointer;
+}
+
+#verzendenButton {
+    border: none;
+    color: white;
+    background-color: #878E00;
+    border-radius: 25px;
+    display: none;
+    float: left;
+    margin-left: 2vh;
+    width: 17vh;
+    font-size: 2.5vh;
+    line-height: 5vh;
+    padding: 0;
 }
 
 #vorige {
@@ -92,14 +122,14 @@ h1 {
     text-align: center;
 }
 
-.button:hover {
-    cursor: pointer;
-}
-
 .button a {
     line-height: 5vh;
     font-size: 2.5vh;
     padding: 1.5vh;
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 fieldset {
@@ -115,10 +145,15 @@ input {
     margin-bottom: 2vh;
 }
 
+.labels {
+    width: 65vh;
+    display: block;
+    position: absolute;
+}
+
 table td {
     width: 85vh;
 }
-
 
 #tab1 {
     display: none;
@@ -145,4 +180,44 @@ table td {
     margin-bottom: 1vh;
     border-bottom: 2px solid #878E00;
     width: 35vh;
+}
+
+@media screen and (max-width: 150vh) {
+
+    .logo {
+        margin-top: 2vh;
+        width: 30%;
+    }
+
+    .form {
+        width: 90%;
+        height: 80vh;
+        position: relative;
+    }
+
+    .tab {
+        width: 90%;
+    }
+
+    #buttons {
+        margin-left: 15%;
+        position: absolute;
+        bottom: 3vh;
+    }
+
+    .labels {
+        width: 80%;
+    }
+
+    #tab1 td, #tab2 td {
+        display: inline-block;
+    }
+
+    #tab1 {
+        height: 60vh;
+    }
+
+    p {
+        margin-top: -1vh;
+    }
 }

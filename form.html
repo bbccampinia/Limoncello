@@ -1,7 +1,7 @@
 <html>
     <head>
         <script src="form.js"></script>
-<!--        <script src="https://smtpjs.com/v3/smtp.js"></script>-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="form.css">
         <link rel="icon" href="images/logo.png" type='image/x-icon' />
@@ -14,7 +14,7 @@
             <a href="index.html"><img class="logo" src="images/logo.png"></a>
             <div class="form">
                 <form id="regForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeNjYK173pPQNPtLWCdBb6uWEAEYqPSlwYfy38ZqAbFkEDgWQ/formResponse">
-                    
+
 
                     <div class="tab" id="tab0">
                         <h1>Bestelformulier</h1>
@@ -48,11 +48,11 @@
                             <tr>
                                 <td>
                                     <p>Voornaam*</p>
-                                    <input required type="text" placeholder="Voornaam" name="entry.2111466448">
+                                    <input required id="voornaam" type="text" placeholder="Voornaam" name="entry.2111466448">
                                 </td>
                                 <td>
                                     <p>Achternaam*</p>
-                                    <input required type="text" placeholder="Achternaam" name="entry.501239135">
+                                    <input required id="achternaam" type="text" placeholder="Achternaam" name="entry.501239135">
                                 </td>
                             </tr>
                             <tr>
@@ -66,8 +66,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <p>Bezorgwijze</p>
+                                <td class="labels">
+                                    <p>Bezorgwijze*</p>
                                     <input type="radio" id="levering" name="entry.1667882230" value="LeveringAanHuis">
                                     <label for="LeveringAanHuis">Levering aan huis (mogelijk in Retie, Dessel en Mol)</label><br>
                                     <input type="radio" id="afhalen" name="entry.1667882230" value="AfhalingInDessel">
@@ -78,21 +78,21 @@
                     </div>
 
                     <div class="tab" id="tab2">
-                        <h1>Gegevens vervolg</h1>
+                        <h1>Vervolg gegevens</h1>
                         <table>
                             <tr>
                                 <td>
-                                    <p>Straat + huisnummer</p>
+                                    <p>Straat + huisnummer*</p>
                                     <input type="text" placeholder="Straat + huisnummer" name="entry.1503207315">
                                 </td>
                                 <td>
-                                    <p>Plaats</p>
+                                    <p>Plaats*</p>
                                     <input type="text" placeholder="Plaats" name="entry.1752796779">
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <p>Indien niet thuis</p>
+                                <td class="labels">
+                                    <p>Indien niet thuis*</p>
                                     <input type="radio" id="buren" name="entry.1629819793" value="LeverBijDeBuren">
                                     <label for="LeverBijDeBuren">Lever bij de buren</label><br>
                                     <input type="radio" id="achterdeur" name="entry.1629819793" value="ZetAanAchterdeur">
@@ -115,10 +115,8 @@
                     <div id="buttons">
                         <div class="button" id="vorige"><a onclick="previousTab()">Vorige</a></div>
                         <div class="button" id="volgende"><a onclick="nextTab()">Volgende</a></div>
-<!--                        <div class="button" id="verzenden"><a onclick="submit()" class="form__submit">Verzenden</a></div>-->
-                        <button class="form__submit">Verzenden</button>
+                        <a onclick="sendEmail()" id="verzenden"><button id="verzendenButton" class="form__submit">Verzenden</button></a>
                     </div>
-
                 </form>
             </div>
         </div>

@@ -1,10 +1,10 @@
 var currentTab = 0;
-
 var limoncello = 0;
 var limonade = 0;
 var totaal = 0;
+var email;
+var naam;
 
-var email = "";
 
 function showTab() {
     if (currentTab === 0) {
@@ -13,7 +13,6 @@ function showTab() {
         document.getElementById("tab2").style.display = "none";
         document.getElementById("tab3").style.display = "none";
         document.getElementById("tab4").style.display = "none";
-
         document.getElementById("vorige").style.display = "none";
         document.getElementById("volgende").style.display = "block";
         document.getElementById("verzenden").style.display = "none";
@@ -23,7 +22,6 @@ function showTab() {
         document.getElementById("tab2").style.display = "none";
         document.getElementById("tab3").style.display = "none";
         document.getElementById("tab4").style.display = "none";
-
         document.getElementById("vorige").style.display = "block";
         document.getElementById("volgende").style.display = "block";
         document.getElementById("verzenden").style.display = "none";
@@ -33,7 +31,6 @@ function showTab() {
         document.getElementById("tab2").style.display = "block";
         document.getElementById("tab3").style.display = "none";
         document.getElementById("tab4").style.display = "none";
-
         document.getElementById("vorige").style.display = "block";
         document.getElementById("volgende").style.display = "block";
         document.getElementById("verzenden").style.display = "none";
@@ -43,7 +40,6 @@ function showTab() {
         document.getElementById("tab2").style.display = "none";
         document.getElementById("tab3").style.display = "block";
         document.getElementById("tab4").style.display = "none";
-
         document.getElementById("vorige").style.display = "block";
         document.getElementById("volgende").style.display = "block";
         document.getElementById("verzenden").style.display = "none";
@@ -54,10 +50,10 @@ function showTab() {
         document.getElementById("tab2").style.display = "none";
         document.getElementById("tab3").style.display = "block";
         document.getElementById("tab4").style.display = "none";
-
         document.getElementById("vorige").style.display = "block";
         document.getElementById("volgende").style.display = "none";
         document.getElementById("verzenden").style.display = "block";
+        document.getElementById("verzendenButton").style.display = "block";
     }
 }
 
@@ -67,11 +63,9 @@ function submit() {
     document.getElementById("tab2").style.display = "none";
     document.getElementById("tab3").style.display = "none";
     document.getElementById("tab4").style.display = "block";
-
     document.getElementById("vorige").style.display = "none";
     document.getElementById("volgende").style.display = "none";
     document.getElementById("verzenden").style.display = "none";
-
     var info = document.getElementById("tab4");
     var tekst = document.createElement('p');
     tekst = document.createTextNode('De betalingsdetails werden verzonden naar het opgegeven emailadres. Het te betalen bedrag (€' + totaal + ') kan gestort worden op BE80 0689 0960 3177 op naam van VZW BBC Campinia, BIC: GKCCBEBB.')
@@ -90,11 +84,8 @@ function calculate() {
         limoncello = 20;
     } else if (document.getElementById("limoncelloList").value === "1") {
         limoncello = 10;
-    } else if (document.getElementById("limoncelloList").value === "0") {
-        limoncello = 00;
     }
     ;
-
     if (document.getElementById("limonadeList").value === "5") {
         limonade = 15;
     } else if (document.getElementById("limonadeList").value === "4") {
@@ -105,34 +96,24 @@ function calculate() {
         limonade = 6;
     } else if (document.getElementById("limonadeList").value === "1") {
         limonade = 3;
-    } else if (document.getElementById("limonadeList").value === "0") {
-        limonade = 0;
     }
     ;
-
     totaal = limoncello + limonade;
-
     var overzicht = document.createElement('h1');
     overzicht.classList.add("overzicht");
     overzicht.appendChild(document.createTextNode('Overzicht bestelling'));
-
     var limoncelloOverzicht = document.createElement('p');
     limoncelloOverzicht = document.createTextNode('Totaal limoncello: €' + limoncello + '\r');
-
     var limonadeOverzicht = document.createElement('p');
     limonadeOverzicht = document.createTextNode('Totaal limonade: €' + limonade);
-
     var eindtotaal = document.createElement('p');
     eindtotaal = document.createTextNode('Totaal te betalen: €' + totaal);
-
     var br = document.createElement("br");
     var br1 = document.createElement("br");
     var br2 = document.createElement("br");
     var br3 = document.createElement("br");
-
     var div = document.createElement("div");
     div.classList.add("div");
-
     var tab = document.getElementById('tab3');
     tab.appendChild(overzicht);
     tab.appendChild(br);
@@ -143,10 +124,10 @@ function calculate() {
     tab.appendChild(br3);
     tab.appendChild(div);
     tab.appendChild(eindtotaal);
-
-
     email = document.getElementById("email").value;
+    naam = document.getElementById("voornaam").value + " " + document.getElementById("achternaam").value;
 }
+
 
 
 function nextTab() {
@@ -174,13 +155,19 @@ function previousTab() {
     showTab();
 }
 
-
-function sendMail() {
-    Email.send("lottemarien6@gmail.com",
-            email,
-            "Bestelling limonade & limoncello BBC Campinia",
-            "Bedankt voor je bestelling!\n\
-            De betalingsdetails werden verzonden naar het opgegeven emailadres.\n\
-            Het te betalen bedrag (€" + totaal + ") kan gestort worden op BE80 0689 0960 3177 op naam van VZW BBC Campinia met als mededeling 'Limoncello + jouw naam', BIC: GKCCBEBB.",
-            {token: "63cb3a19-2684-44fa-b76f-debf422d8b00"});
+function sendEmail() {
+    console.log("send mail...");
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "limoncellocampinia@gmail.com",
+        Password: "CampiniLimon8",
+        To: email,
+        From: "limoncellocampinia@gmail.com",
+        Subject: "Bevestiging bestelling limoncello",
+        Body: "Bedankt voor je bestelling!\n\
+\n\
+            Het te betalen bedrag (€" + totaal + ") kan gestort worden op BE80 0689 0960 3177 op naam van VZW BBC Campinia met als mededeling 'Limoncello " + naam + "', BIC: GKCCBEBB."
+    }).then(
+            
+    );
 }
