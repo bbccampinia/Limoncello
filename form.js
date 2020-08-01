@@ -76,6 +76,14 @@ function submit() {
 
 function calculate() {
     calculated = true;
+    
+    if (document.getElementById("levering").checked && (document.getElementById("adres").value === "" || document.getElementById("plaats").value === "")) {
+        document.getElementById("error").style.display = "block";
+        document.getElementById("verzendenButton").disabled = true; 
+    } else {
+        document.getElementById("error").style.display = "none";
+        document.getElementById("verzendenButton").disabled = false; 
+    }
 
     if (document.getElementById("limoncelloList").value === "5") {
         limoncello = 50;
@@ -147,7 +155,7 @@ function nextTab() {
 
 
 function previousTab() {
-    
+
     if (calculated) {
         document.getElementById('tab3').innerHTML = '';
     }
@@ -161,18 +169,20 @@ function previousTab() {
 }
 
 function sendEmail() {
-    console.log("send mail...");
+
+    document.getElementById("error").style.display = "none";
     Email.send({
         Host: "smtp.gmail.com",
         Username: "limoncellocampinia@gmail.com",
         Password: "CampiniLimon8",
         To: email,
         From: "limoncellocampinia@gmail.com",
-        Subject: "Bevestiging bestelling limoncello & limonade",
+        Subject: "Bevestiging bestelling limoncello",
         Body: "Bedankt voor je bestelling!\n\
 \n\
             Het te betalen bedrag (€" + totaal + ") kan gestort worden op BE80 0689 0960 3177 op naam van VZW BBC Campinia met als mededeling 'Limoncello " + naam + "', BIC: GKCCBEBB."
     }).then(
-            
-    );
+
+            );
+
 }

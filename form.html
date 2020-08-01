@@ -83,11 +83,11 @@
                             <tr>
                                 <td>
                                     <p>Straat + huisnummer*</p>
-                                    <input type="text" placeholder="Straat + huisnummer" name="entry.1503207315">
+                                    <input id="adres" type="text" placeholder="Straat + huisnummer" name="entry.1503207315">
                                 </td>
                                 <td>
                                     <p>Plaats*</p>
-                                    <input type="text" placeholder="Plaats" name="entry.1752796779">
+                                    <input id="plaats" type="text" placeholder="Plaats" name="entry.1752796779">
                                 </td>
                             </tr>
                             <tr>
@@ -100,12 +100,12 @@
                                     <input type="radio" id="ander" name="entry.1629819793" value="AnderMomentOfAfhaling">
                                     <label for="AnderMomentOfAfhaling">Lever op ander moment of contacteer voor afhaling in Dessel</label><br>
                                 </td>
+                            
                             </tr>
                         </table>
                     </div>
 
                     <div class="tab" id="tab3">
-
                     </div>
 
                     <div class="tab" id="tab4">
@@ -113,6 +113,7 @@
                     </div>
 
                     <div id="buttons">
+                        <p id="error">Gelieve eerst alle velden in te vullen</p>
                         <div class="button" id="vorige"><a onclick="previousTab()">Vorige</a></div>
                         <div class="button" id="volgende"><a onclick="nextTab()">Volgende</a></div>
                         <a onclick="sendEmail()" id="verzenden"><button id="verzendenButton" class="form__submit">Verzenden</button></a>

@@ -182,6 +182,12 @@ table td {
     width: 35vh;
 }
 
+#error {
+    color: red;
+    font-size: 1.5vh;
+    display: none;
+}
+
 @media screen and (max-width: 150vh) {
 
     .logo {
