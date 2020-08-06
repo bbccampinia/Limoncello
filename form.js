@@ -174,7 +174,7 @@ function sendEmail() {
     Email.send({
         Host: "smtp.gmail.com",
         Username: "limoncellocampinia@gmail.com",
-        Password: "ghhvjnkiysxdovlf",
+        Password: "pmqrcfverltggqli",
         To: email,
         From: "limoncellocampinia@gmail.com",
         Subject: "Bevestiging bestelling limoncello",
